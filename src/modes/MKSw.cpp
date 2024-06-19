@@ -1,10 +1,10 @@
-/* Ultimate profile rework by Zeronia */
-#include "modes/Ultimate.hpp"
+/* MKSw profile rework by Zeronia */
+#include "modes/MKSw.hpp"
 
 #define ANALOG_STICK_MIN 28
 #define ANALOG_STICK_NEUTRAL 128
 #define ANALOG_STICK_MAX 228
-Ultimate::Ultimate(socd::SocdType socd_type) {
+MKSw::MKSw(socd::SocdType socd_type) {
 
     _socd_pair_count = 4;
 
@@ -24,15 +24,15 @@ Ultimate::Ultimate(socd::SocdType socd_type) {
 
     /* ---------------------------------------------- Button Config --------------------------------------------- */
 
-void Ultimate::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
+void MKSw::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     outputs.a = inputs.a;
     outputs.b = inputs.b;
-    outputs.x = inputs.x;
+    outputs.x = inputs.r;
     outputs.y = inputs.y;
     outputs.buttonR = inputs.z;
     outputs.buttonL = inputs.lightshield; // LS = Left Bumper.
-    outputs.triggerLDigital = inputs.l;
-    outputs.triggerRDigital = inputs.r;
+    outputs.triggerLDigital = inputs.c_down;
+    outputs.triggerRDigital = inputs.x;
     outputs.start = inputs.start;
     outputs.select = inputs.select;
     outputs.home = inputs.home;
@@ -48,7 +48,7 @@ void Ultimate::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     }
 }
 
-void Ultimate::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
+void MKSw::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
     // Coordinate calculations to make modifier handling simpler.
     UpdateDirections(
         inputs.left,
