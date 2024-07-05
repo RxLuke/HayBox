@@ -9,6 +9,7 @@
 #include "modes/RivalsOfAether.hpp"
 #include "modes/Ultimate.hpp"
 #include "modes/MKSw.hpp"
+#include "modes/FCGUlt.hpp"
 
 extern KeyboardMode *current_kb_mode;
 
@@ -49,6 +50,8 @@ void select_mode(CommunicationBackend *backend) {
             );
         } else if (inputs.down) {
             set_mode(backend, new Ultimate(socd::SOCD_2IP));
+        } else if (inputs.c_up) {
+            set_mode(backend, new FCGUlt(socd::SOCD_2IP));
         } else if (inputs.c_down) {
             set_mode(backend, new MKSw(socd::SOCD_2IP));
         } else if (inputs.right) {
