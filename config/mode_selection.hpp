@@ -51,7 +51,7 @@ void select_mode(CommunicationBackend *backend) {
         } else if (inputs.down) {
             set_mode(backend, new Ultimate(socd::SOCD_2IP));
         } else if (inputs.c_up) {
-            set_mode(backend, new FCGUlt(socd::SOCD_2IP));
+            set_mode(backend, new FCGUlt(socd::SOCD_NEUTRAL));
         } else if (inputs.c_down) {
             set_mode(backend, new MKSw(socd::SOCD_2IP));
         } else if (inputs.right) {

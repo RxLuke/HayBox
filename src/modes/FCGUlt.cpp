@@ -10,7 +10,7 @@ FCGUlt::FCGUlt(socd::SocdType socd_type) {
 
     _socd_pairs = new socd::SocdPair[_socd_pair_count]{
 
-        socd::SocdPair{&InputState::left,    &InputState::right,   socd::SOCD_2IP},
+        socd::SocdPair{&InputState::left,    &InputState::right,   socd::SOCD_NEUTRAL},
 
         socd::SocdPair{ &InputState::down,   &InputState::up,      socd::SOCD_2IP},
 
